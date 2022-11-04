@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Feign Client
+
+logging:
+  level:
+    org.example.client.feign.client.UserClient: debug
+
+feign:
+  compression:
+    response:
+      enabled: true
+      useGzipDecoder: true
+  client:
+    config:
+      userClient:
+        loggerLevel: headers
+        connectTimeout: 300_000
+        readTimeout: 300_000
+
+app:
+  feign:
+    user-service:
+      url: http://localhost:18000/api/v1/server
