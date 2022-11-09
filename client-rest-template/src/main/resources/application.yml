@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Feign Client
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+
+app:
+  feign:
+    user-service:
+      url: http://localhost:18000/api/v1/server
