@@ -22,6 +22,8 @@ curl -I http://localhost:18000/api/v1/server/users -H "Accept-Encoding: gzip"
 ```
 
 ### Client
+Refer below sample clients using Open Feign & Rest Template:
+
 #### Open Feign
 - Spring Cloud OpenFeign is designed to allow developers to use a declarative way to build HTTP clients by means of creating annotated interfaces without writing any boilerplate code.
 - Refer [UserClient](client-feign/src/main/java/org/example/client/feign/client/UserClient.java) for the user endpoint exposed by Server module.
