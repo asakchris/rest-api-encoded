@@ -10,7 +10,6 @@ feign:
   compression:
     response:
       enabled: true
-      useGzipDecoder: true
   client:
     config:
       userClient:
