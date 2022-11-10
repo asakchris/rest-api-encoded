@@ -8,7 +8,7 @@
 
 ### Server
 - It is a Spring Boot REST API application which compress the response if response body is more than 2 KB.
-- Run this application using [this](.run/Server.run.xml) file.
+- Run this application using [Server.run.xml](.run/Server.run.xml) file.
 - Refer below for details about how to access the endpoints:
 ```shell
 # Get uncompressed response
@@ -25,3 +25,11 @@ curl -I http://localhost:18000/api/v1/server/users -H "Accept-Encoding: gzip"
 #### Open Feign
 - Spring Cloud OpenFeign is designed to allow developers to use a declarative way to build HTTP clients by means of creating annotated interfaces without writing any boilerplate code.
 - Refer [UserClient](client-feign/src/main/java/org/example/client/feign/client/UserClient.java) for the user endpoint exposed by Server module.
+- Enabled response code compression using `feign.compression.response.enabled` property in [application.yml](client-feign/src/main/resources/application.yml).
+- Run this client using [Client-Feign.run.xml](.run/Client-Feign.run.xml) file.
+
+#### Rest Template
+- Replaced default request factory with Apache HttpClient `HttpComponentsClientHttpRequestFactory`, which uncompress the response on the fly.
+  Refer [Config](client-rest-template/src/main/java/org/example/client/rest/config/Config.java).
+- This request factory from Apache HttpClient sends `Accept-Encoding` header and uncompress the response if it contains `Content-Encoding` header with value as `gzip`.
+- Run this client using [Client-Rest-Template.run.xml](.run/Client-Rest-Template.run.xml) file.
