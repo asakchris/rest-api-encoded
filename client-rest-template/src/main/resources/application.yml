@@ -1,13 +1,12 @@
 spring:
   application:
-    name: Feign Client
+    name: Rest Template Client
 
-server:
-  compression:
-    enabled: true
-    mime-types: application/json
+logging:
+  level:
+    org.apache.http.impl: debug
+    org.apache.http.headers: debug
 
 app:
-  feign:
-    user-service:
-      url: http://localhost:18000/api/v1/server
+  user-service:
+    url: http://localhost:18000/api/v1/server/users

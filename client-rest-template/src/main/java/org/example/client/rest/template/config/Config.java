@@ -1,4 +1,4 @@
-package org.example.client.rest.template;
+package org.example.client.rest.template.config;
 
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.boot.autoconfigure.web.client.RestTemplateBuilderConfigurer;

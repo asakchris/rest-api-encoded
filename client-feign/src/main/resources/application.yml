@@ -5,6 +5,8 @@ spring:
 logging:
   level:
     org.example.client.feign.client.UserClient: debug
+    org.apache.http.impl: debug
+    org.apache.http.headers: debug
 
 feign:
   compression:
