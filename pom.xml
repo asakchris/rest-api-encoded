@@ -11,6 +11,7 @@
   <modules>
     <module>server</module>
     <module>client-feign</module>
+    <module>client-rest-template</module>
   </modules>
 
   <parent>
