@@ -18,7 +18,7 @@ public class Application implements CommandLineRunner {
   private final UserService service;
 
   @Override
-  public void run(String... args) throws Exception {
+  public void run(String... args) {
     log.info("Started");
     final List<User> users = service.getUsers();
     log.info("users size: {}", users.size());
